@@ -10,12 +10,22 @@ const port=process.env.PORT || 5500;
 
 app.use(express.static(path.join(__dirname,'public')));
 
-mongoose.connect('mongodb+srv://aniketroy:personalwebsite@cluster0.lslotdu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/Portfolio_message_db', {
+/*mongoose.connect('mongodb+srv://aniketroy:personalwebsite@cluster0.lslotdu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/Portfolio_message_db', {
     useNewUrlParser:true,
     useUnifiedTopology:true,
 }).then(()=>{
     console.log("MongoDB is connected")
-})
+})*/
+const connection= async () =>{
+    const url='mongodb+srv://aniketroy:personalwebsite@cluster0.lslotdu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/Portfolio_message_db`;
+    try {
+        await mongoose.connect(url,{useNewUrlParser:true,useUnifiedTopology:true,});
+        console.log("MongoDB connected successfully");
+    }
+    catch(error){
+        console.log("Can't connect to the database for" , error);
+    }
+}
 const Schema=mongoose.Schema;
 const dataschema=new Schema({
     name:String,
