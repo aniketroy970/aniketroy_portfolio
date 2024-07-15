@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname,'public')));
     console.log("MongoDB is connected")
 })*/
 try{
-    mongoose.connect('mongodb+srv://aniket:aniket123@cluster0.lslotdu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/message', {
+    mongoose.connect('mongodb+srv://aniketroy:aniket123@cluster0.lslotdu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/message', {
     useNewUrlParser:true,
     useUnifiedTopology:true,
 }).then(()=>{
