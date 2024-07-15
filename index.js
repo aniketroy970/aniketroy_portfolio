@@ -20,6 +20,8 @@ try{
     mongoose.connect('mongodb+srv://aniketroy:aniket123@cluster0.lslotdu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/message', {
     useNewUrlParser:true,
     useUnifiedTopology:true,
+    serverSelectionTimeoutMS: 90000,
+    socketTimeoutMS: 45000, 
 }).then(()=>{
     console.log("MongoDB is connected")
 })
