@@ -28,7 +28,7 @@ const data=mongoose.model('Message',dataschema);
 app.listen(port,()=>{
     console.log(`Server running at port no. ${port}`)
 })
-app.post('/message_sending',(req,res)=>{
+app.post('/sent',(req,res)=>{
     const {name,email,phone_number,message}=req.body;
     const newData=new data({
         name,
